@@ -206,7 +206,7 @@ void TGMNetworkConfigurator::extractTopology()
 		// Network is router-level only
 		currentAS.extractByProperty("Internet"); //TODO: check if this is acceptable
 		if (currentAS.getNumNodes() != 1)
-			opp_error("Error: tried to extract router-level only topology, but found more than 1 Inet module\n");
+			opp_error("Error: tried to extract router-level only topology, but found 0 or more than 1 Inet module\n");
 	}
 
 	// get each router-level topology
@@ -387,4 +387,3 @@ void TGMNetworkConfigurator::setIntraASRoutes(cTopology &topology, nodeInfoAS &a
 		}
 	}
 }
-

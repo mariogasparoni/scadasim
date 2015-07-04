@@ -81,10 +81,10 @@ struct nodeInfoRL {
 			asType = UNSPECIFIED;
 		else {
 			cerr
-					<< "found module that doesn't belong to Transit AS (tas) or Stub AS (sas): "
+					<< "found module that doesn't belong/contains to/a Transit AS (tas) or Stub AS (sas): "
 					<< fullPath << endl;
 			opp_error(
-					"found module that doesn't belong to Transit AS (tas) or Stub AS (sas)");
+					"found module that doesn't belong/contains to/a Transit AS (tas) or Stub AS (sas)");
 		}
 
 		// set index to char position after substring "sas/tas"

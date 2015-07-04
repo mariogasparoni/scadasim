@@ -1,2 +1,8 @@
 src/simulations/results/*.*
 .tkenvrc
+*.o
+.tkenvlog
+.sca
+.vci
+.vec
+/src/scadasim

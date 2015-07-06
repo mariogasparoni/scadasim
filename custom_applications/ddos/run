@@ -1,0 +1,3 @@
+INET_PROJ=../../../inet/src
+SCADASIM_PROJ=../../../scadasim/src
+./ddos -n .:$INET_PROJ:$SCADASIM_PROJ

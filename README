@@ -1,1 +1,40 @@
-scadasim is licensed under GPLv2 (http://www.gnu.org/licenses/gpl.html). It uses part of Rease simulator (https://svn.tm.kit.edu/trac/ReaSE), therefore retains the same license type. 
+scadasim is licensed under GPLv2 (http://www.gnu.org/licenses/gpl.html). It uses part of Rease simulator (https://svn.tm.kit.edu/trac/ReaSE), therefore retains the same license type.
+
+
+Building SCADASim as a shared lib (libscadasim.so)
+==================================================
+Tested in Debian 8 (Jessie)
+
+OmNeT version: 4.2: (https://omnetpp.org/component/jdownloads/download/32-release-older-versions/2239-omnet-4-2-source-ide-tgz)
+Inet version: 20111118 (http://omnetpp.org/download/contrib/models/inet-20111118-src.tgz)
+
+1)OmNeT
+
+    1.1)Download the recommended OmNeT and extract it.
+
+    1.2)Add this in include in abspath.cc:
+        #include <unistd.h>
+
+    1.3)Do the modification suggested in:
+        https://groups.google.com/forum/#!topic/omnetpp/J1zdQvFq9qc
+
+    1.4)Add OmNeT's bin/ folder to the PATH, then you can configure/build it.
+    cd to OmNeT's main folder and:
+        ./configure
+        make
+
+2)Inet
+    1.1)Download the recommended version of Inet, extract and cd to it.
+    1.2)Build it:
+        make makefiles
+        make
+    1.3)It should generates libinet.so in 'src' folder.
+
+3)Finally , SCADASim
+    3.1) At the top directory of SCADASim, generate Makefiles:
+        make makefiles (or 'make buildbinary' to build SCADASim's simulations)
+
+    3.2) and then you can build it:
+        make
+
+    3.3)It should generates libscamasim.so in 'src' folder.
